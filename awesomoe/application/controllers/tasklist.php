@@ -93,6 +93,9 @@ class tasklist extends aw_tasks
             } elseif ($this->getParameter('fnc') === 'allmeasowner' && $this->getParameter('cl') === 'tasklist') {
                 $smarty->assign('aTasks', $this->getOnlyMyTasks());
                 $smarty->display('tpl/task/task-mylist.tpl');
+            } elseif ($this->getParameter('fnc') === 'free' && $this->getParameter('cl') === 'tasklist') {
+                $smarty->assign('aTasks', $this->getOnlyFreeTasks());
+                $smarty->display('tpl/task/task-mylist.tpl');
             } elseif ($this->getParameter('fnc') === 'overtime' && $this->getParameter('cl') === 'tasklist') {
                 $smarty->assign('aTasks', $this->getOverTimedTasks());
                 $smarty->display('tpl/task/task-overtime.tpl');

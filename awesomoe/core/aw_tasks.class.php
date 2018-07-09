@@ -104,6 +104,19 @@ class aw_tasks extends aw_base
 		$oResult = $this->_db->query($sSelect,'assoc');
 		return $oResult;
 	}
+
+    public function getOnlyFreeTasks() {
+        $sSelect = "
+			SELECT tasks.*,prio.awname, prio.awcolor, project.awname as projectname, project.awprefix as prefix, project.awid as pid
+				FROM awtasks as tasks
+				LEFT JOIN awprio as prio
+					ON prio.awid = tasks.awprio
+				INNER JOIN awprojects as project
+					ON project.awid = tasks.awproject
+			WHERE awowner = '0' AND awworkflowpos != '99' ORDER BY tasks.awprio DESC;";
+        $oResult = $this->_db->query($sSelect,'assoc');
+        return $oResult;
+    }
 	
 	public function getTask() {
 		$sSelect = "

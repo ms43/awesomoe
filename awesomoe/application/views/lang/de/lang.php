@@ -38,6 +38,7 @@ $aLang = array(
 'MAILCONFIG'                             => 'Mail Konfiguration',
 'TASKPRIORITYS'                          => 'Task Priorität',
 'COMPANYS'                               => 'Firmen',
+'DASHBOARD'                              => 'Dashboard',
 
 // LOGIN
 'SIGNIN'                                 => 'Einloggen',
@@ -50,6 +51,7 @@ $aLang = array(
 'SOLVEDTASKS'                            => 'gelöste Tasks',
 'INTHEENDTIME'                           => 'Gehen dem Ende zu',
 'OVERTIME'                               => 'Über der Zeit',
+'FREE'                                   => 'Verfügbare Tasks',
 
 // TASK
 // ADD

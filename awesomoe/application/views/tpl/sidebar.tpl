@@ -42,8 +42,16 @@
 	  <ul class="sidebar-menu">
 		<li class="header">{awmultilang ident="MENU"}</li>
 		<!-- Optionally, you can add icons to the links -->
-		<li{if $actclass == 'projects' || ($actclass == 'tasklist' && $actfnc != 'allmeasowner')} class="active"{/if}><a href="index.php?cl=projects"><i class="fa fa-th"></i> <span>{awmultilang ident="PROJECTS"}</span></a></li>
-		<li{if $actclass == 'tasklist' && $actfnc == 'allmeasowner'} class="active"{/if}><a href="index.php?cl=tasklist&fnc=allmeasowner"><i class="fa fa-bars"></i> <span>{awmultilang ident="TASKS"}</span></a></li>
+		  <li{if $actclass == ''} class="active"{/if}><a href="index.php"><i class="fa fa-tachometer"></i> <span>{awmultilang ident="Dashboard"}</span></a></li>
+		  <li{if $actclass == 'projects' || ($actclass == 'tasklist' && $actfnc != 'allmeasowner' && $actfnc != 'free'&& $actfnc != 'overtime')} class="active"{/if}><a href="index.php?cl=projects"><i class="fa fa-th"></i> <span>{awmultilang ident="PROJECTS"}</span></a></li>
+		<li class="treeview {if $actclass == 'tasklist' && ($actfnc == 'allmeasowner'|| $actfnc=='free' || $actfnc=='overtime')} active{/if}">
+			<a href="index.php?cl=tasklist&fnc=allmeasowner"><i class="fa fa-bars"></i> <span>{awmultilang ident="TASKS"}</span><i class="fa fa-angle-left pull-right"></i></a>
+			<ul class="treeview-menu">
+				<li {if $actclass == 'tasklist' && $actfnc == 'allmeasowner'} class="active"{/if}><a href="index.php?cl=tasklist&fnc=allmeasowner"><i class="fa fa-circle-o"></i> {awmultilang ident="TASKS"}</a></li>
+				<li {if $actclass == 'tasklist' && $actfnc == 'free'} class="active"{/if}><a href="index.php?cl=tasklist&fnc=free"><i class="fa fa-circle-o"></i> {awmultilang ident="FREE"}</a></li>
+				<li {if $actclass == 'tasklist' && $actfnc == 'overtime'} class="active"{/if}><a href="index.php?cl=tasklist&fnc=overtime"><i class="fa fa-circle-o"></i> {awmultilang ident="OVERTIME"}</a></li>
+			</ul>
+		</li>
 		<li><a href="index.php?cl=calendar"><i class="fa fa-calendar"></i> <span>{awmultilang ident="CALENDAR"}</span></a></li>
 		{if $aActUser.awgroup == '1'}
 			<li class="treeview{if $actclass == 'workflows' || $actclass == 'users' || $actclass == 'config' || $actclass == 'prioritys' || $actclass == 'companys'} active{/if}">

@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="col-sm-10">
-			{$comment.awdesc}
+			{$comment.awdesc|unescape:'html'}
 		</div>
 		<div class="col-sm-12">
 			<hr>

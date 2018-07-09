@@ -41,7 +41,7 @@
 								{/if}
 							</div>
 							<div class="col-sm-6">
-								{$aProject.awdescription}<br>
+								{$aProject.awdescription|unescape:'html'}<br>
 							</div>
 							<div class="col-sm-4">
 								{if $aProject.awleader}{awmultilang ident="LEADER"}: {$oUser->getUserName($aProject.awleader)}<br>{/if}
@@ -128,7 +128,7 @@
 															<div class="col-sm-12">
 																<span class="pull-right">{$task.awname}</span>
 																{awmultilang ident="DESCRIPTION"}<br>
-																{$task.awdescription}
+																{$task.awdescription|unescape:'html'}
 															</div>
 														</div>
 													</div>
@@ -181,7 +181,7 @@
 										<div class="col-sm-12">
 											<span class="pull-right">{$task.awname}</span>
 											{awmultilang ident="DESCRIPTION"}<br>
-											{$task.awdescription}
+											{$task.awdescription|unescape:'html'}
 										</div>
 									</div>
 								</div>

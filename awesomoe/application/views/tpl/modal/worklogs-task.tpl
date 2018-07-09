@@ -25,7 +25,7 @@
 		</div>
 		<div class="col-sm-10">
 			{$worklog.awtime}<br>
-			{$worklog.awdesc}
+			{$worklog.awdesc|unescape:'html'}
 		</div>
 		<div class="col-sm-12">
 			<hr>

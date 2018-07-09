@@ -50,7 +50,7 @@
 									<div class="col-sm-12">
 										<span class="pull-right">{$task.awname}</span>
 										{awmultilang ident="DESCRIPTION"}<br>
-										{$task.awdescription}
+										{$task.awdescription|unescape:'html'}
 									</div>
 								</div>
 							</div>

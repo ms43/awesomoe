@@ -55,7 +55,7 @@
 									<div class="col-sm-6">
 										{if $project.awdescription != ''}
 											{awmultilang ident="DESCRIPTION"}:<br>
-											{$project.awdescription}
+											{$project.awdescription|unescape:'html'}
 										{/if}
 									</div>
 									<div class="col-md-4">

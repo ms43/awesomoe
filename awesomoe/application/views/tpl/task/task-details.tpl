@@ -249,7 +249,7 @@
 										</div>
 										<div class="col-sm-10">
 											{$activity.awtime}<br>
-											{$activity.awworklogdesc}
+											{$activity.awworklogdesc|unescape:'html'}
 										</div>
 										<div class="col-sm-12">
 											<hr>
@@ -270,7 +270,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-10">
-											{$activity.awcommentsdesc}
+											{$activity.awcommentsdesc|unescape:'html'}
 										</div>
 										<div class="col-sm-12">
 											<hr>
